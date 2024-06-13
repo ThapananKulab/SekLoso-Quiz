@@ -2,6 +2,7 @@ import React, { createContext, useState } from "react"
 import Menu from "../components/Menu"
 import Quiz from "../components/Quiz"
 import Score from "../components/Score"
+import Seo from "../components/seo"
 
 import "./App.css"
 
@@ -16,14 +17,12 @@ function App() {
       <div className="App">
         <h1>Web Quiz</h1>
         {appState === "menu" && <Menu />}
-        {}
         {appState === "quiz" && <Quiz />}
-        {}
         {appState === "score" && <Score />}
-        {}
       </div>
     </DataContext.Provider>
   )
 }
 
+export const Head = () => <Seo title="Quiz Sekloso" />
 export default App
