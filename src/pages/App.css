@@ -10,7 +10,8 @@
 .menu,
 .quiz,
 .score {
-  width: 1750px;
+  width: 100%; /* เปลี่ยนจาก 1750px เป็น 100% ให้เต็มพื้นที่ */
+  max-width: 1750px; /* กำหนดความกว้างสูงสุด */
   height: 750px;
   background-color: orange;
   border-radius: 10px;
@@ -18,6 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 10px; /* เพิ่ม margin เพื่อความสวยงาม */
 }
 
 .menu button,
@@ -35,4 +37,22 @@
 button:active {
   background: orange;
   color: #fff;
+}
+
+/* Media queries เพื่อทำให้ responsive */
+@media (max-width: 1200px) {
+  .menu,
+  .quiz,
+  .score {
+    max-width: 100%; /* เปลี่ยนเป็น 100% เมื่อหน้าจอเล็กกว่า 1200px */
+  }
+}
+
+@media (max-width: 600px) {
+  .menu button,
+  .quiz button,
+  .score button {
+    width: 200px; /* ปรับขนาด button เมื่อหน้าจอเล็กกว่า 600px */
+    font-size: 16px; /* ปรับ font-size ของ button เมื่อหน้าจอเล็กกว่า 600px */
+  }
 }
